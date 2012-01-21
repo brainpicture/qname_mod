@@ -140,7 +140,6 @@ function! s:act(cr)
       let lcol = get(val, 3)
 
       if s:type == 2
-        "exe(lnum)
         call setpos('.', [0, lnum, lcol])
         if s:last_match
           call matchdelete(s:last_match)
@@ -213,8 +212,6 @@ function! s:baselist()
 
     let g:qname_ls = copy(s:ls)
   endif
-  "cal add(s:ls, 'test')
-	"cal sort(s:ls, 1)
 endfunc
 
 function! s:buflist()
@@ -261,7 +258,6 @@ function! s:funclist()
     let info = matchlist(d.text, pattern)
     if !empty(info)
       let col = match(d.text, pattern)
-      "echo get(info, 1)
       let l = get(info, 1)
       cal add(s:ls, [l, bname, d.lnum, col + 1])
       continue
@@ -270,14 +266,12 @@ function! s:funclist()
     let info = matchlist(d.text, pattern)
     if !empty(info)
       let col = match(d.text, pattern)
-      "echo get(info, 1)
       let l = get(info, 1)
       cal add(s:ls, [l, bname, d.lnum, col + 1])
       continue
     endif
 
   endfor
-  "let s:line = search("function", 'n');
 
 	"cal sort(s:ls, 1)
 endfunc
@@ -354,7 +348,6 @@ function! s:colPrinter.print() dict
 	let _trow = self.trow
 	if !_len
 		echo " [ No match ] " repeat("\n", _trow)
-    "NO MATCH here
 		return
 	endif
 	let _sel = self.sel
