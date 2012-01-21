@@ -26,4 +26,4 @@ You can customise this behavior by declaring:
 
 Also, you can set g:qname\_filter option, for example I use:
 
-  let g:qname\_filter = '| grep ".\(php\|js\|css\)$"'
+  let g:qname\_filter = '| grep ".\\(php\|js\|css\\)$"'
